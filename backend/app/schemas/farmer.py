@@ -11,10 +11,11 @@ class FarmerCreate(BaseModel):
     land_size_ha: Optional[float] = None
     soil_type: Optional[str] = None
     irrigation_type: Optional[str] = None
-    crops: Optional[str] = None # comma-separated
+    crops: Optional[str] = None  # comma-separated
 
 
 class FarmerOut(FarmerCreate):
     id: int
+
     class Config:
         from_attributes = True

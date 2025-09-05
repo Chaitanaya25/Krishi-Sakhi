@@ -1,7 +1,10 @@
-﻿# Python
+# Python
 __pycache__/
 *.pyc
 .venv/
+.venv_new/
+dist/
+.build/
 
 # Node
 node_modules/
@@ -10,7 +13,8 @@ out/
 
 # Environment
 .env
-.env.local
+.env.*
+backend/.env
 
 # OS
 .DS_Store

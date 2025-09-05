@@ -12,5 +12,6 @@ class ActivityCreate(BaseModel):
 
 class ActivityOut(ActivityCreate):
     id: int
+
     class Config:
         from_attributes = True

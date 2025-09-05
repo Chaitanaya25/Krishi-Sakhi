@@ -2,6 +2,7 @@
 from sqlalchemy.sql import func
 from .base import Base
 
+
 class Farmer(Base):
     __tablename__ = "farmers"
 

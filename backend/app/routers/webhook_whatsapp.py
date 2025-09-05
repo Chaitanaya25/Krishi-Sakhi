@@ -6,7 +6,9 @@ router = APIRouter(prefix="/webhook", tags=["whatsapp"])
 
 
 @router.get("/whatsapp")
-async def verify(mode: str | None = None, challenge: str | None = None, token: str | None = None):
+async def verify(
+    mode: str | None = None, challenge: str | None = None, token: str | None = None
+):
     # Meta webhook verification
     if mode == "subscribe" and token == settings.WHATSAPP_VERIFY_TOKEN:
         return int(challenge or 0)

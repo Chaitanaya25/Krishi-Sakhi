@@ -17,15 +17,22 @@ class KBVectorStore:
         except Exception:
             self.client.recreate_collection(
                 collection_name=self.collection,
-                vectors_config=qmodels.VectorParams(size=384, distance=qmodels.Distance.COSINE),
+                vectors_config=qmodels.VectorParams(
+                    size=384, distance=qmodels.Distance.COSINE
+                ),
             )
 
     def index_texts(self, texts: List[str]):
         embeddings = list(self.embedder.embed(texts))
-        points = [qmodels.PointStruct(id=i, vector=emb, payload={"text": t}) for i, (emb, t) in enumerate(zip(embeddings, texts))]
+        points = [
+            qmodels.PointStruct(id=i, vector=emb, payload={"text": t})
+            for i, (emb, t) in enumerate(zip(embeddings, texts))
+        ]
         self.client.upsert(collection_name=self.collection, points=points)
 
     def search(self, query: str, limit: int = 3):
         qvec = list(self.embedder.embed([query]))[0]
-        res = self.client.search(collection_name=self.collection, query_vector=qvec, limit=limit)
+        res = self.client.search(
+            collection_name=self.collection, query_vector=qvec, limit=limit
+        )
         return [hit.payload["text"] for hit in res]

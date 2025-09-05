@@ -2,25 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-
-:root { color-scheme: light dark; }
-
+:root { 
+  color-scheme: light; 
+}
 
 body {
-@apply bg-gradient-to-br from-emerald-50 via-white to-emerald-100 dark:from-gray-900 dark:via-gray-950 dark:to-emerald-950 text-gray-800 dark:text-gray-100;
+  @apply bg-background text-gray-800 min-h-screen;
 }
 
-
+/* Card styling with soft shadows and rounded corners */
 .card {
-@apply bg-white/70 dark:bg-black/30 backdrop-blur-md rounded-2xl shadow-glass p-6 border border-white/40 dark:border-white/10;
+  @apply bg-white rounded-2xl shadow-card p-6 border border-gray-100;
 }
 
-
+/* Form elements styling */
 .input {
-@apply w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-white/10 px-4 py-2 outline-none focus:ring-2 focus:ring-accent;
+  @apply w-full rounded-xl border border-lightblue bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-teal focus:border-teal transition-colors text-gray-800 text-base;
 }
 
+.select {
+  @apply w-full rounded-xl border border-lightblue bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-teal focus:border-teal transition-colors text-gray-800 text-base appearance-none;
+}
 
+/* Button styling */
 .btn {
-@apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium bg-primary text-white hover:bg-green-900 transition;
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-white transition-all shadow-sm hover:shadow-md;
+}
+
+.btn-primary {
+  @apply btn bg-yellow hover:bg-yellow/90 active:bg-yellow/80 text-gray-800;
+}
+
+.btn-secondary {
+  @apply btn bg-lightblue hover:bg-lightblue/90 active:bg-lightblue/80 text-navy;
+}
+
+.btn-outline {
+  @apply btn bg-transparent border border-lightblue text-navy hover:bg-lightblue/10;
+}
+
+.btn:disabled {
+  @apply opacity-60 cursor-not-allowed;
+}
+
+/* Alert styling */
+.alert {
+  @apply p-4 rounded-xl mb-4;
+}
+
+.alert-error {
+  @apply bg-orange text-white;
+}
+
+.alert-success {
+  @apply bg-green-500 text-white;
+}
+
+.alert-info {
+  @apply bg-lightblue text-navy;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply text-teal font-bold;
+}
+
+h1 { @apply text-3xl mb-6; }
+h2 { @apply text-2xl mb-4; }
+h3 { @apply text-xl mb-3; }
+
+.text-muted {
+  @apply text-gray-500 font-normal;
+}
+
+/* Navigation */
+.nav-link {
+  @apply px-4 py-2 text-white opacity-80 hover:opacity-100 transition-opacity;
+}
+
+.nav-link-active {
+  @apply nav-link opacity-100 border-b-2 border-yellow;
+}
+
+/* Layout utilities */
+.section {
+  @apply py-6;
+}
+
+.container-narrow {
+  @apply max-w-4xl mx-auto px-4;
 }

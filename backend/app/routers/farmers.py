@@ -10,7 +10,8 @@ router = APIRouter(prefix="/farmers", tags=["farmers"])
 
 @router.post("/", response_model=FarmerOut)
 def create_farmer(payload: FarmerCreate, db: Session = Depends(get_db)):
-    farmer = Farmer(**payload.dict())
+    # Pydantic v2: use model_dump for dict conversion
+    farmer = Farmer(**payload.model_dump())
     db.add(farmer)
     db.commit()
     db.refresh(farmer)
