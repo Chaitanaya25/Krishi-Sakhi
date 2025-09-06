@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🌾 Krishi Sakhi – AI-Powered Personal Farming Assistant
 
 ![Main Banner](docs/images/MAIN_PIC.png)
