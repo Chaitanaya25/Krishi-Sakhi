@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌾 Krishi Sakhi – AI-Powered Personal Farming Assistant
 
 ![Main Banner](docs/images/MAIN_PIC.png)
@@ -64,3 +65,53 @@ Generate personalized advisories per farmer.
 ```bash
 git clone https://github.com/yourusername/krishi-sakhi.git
 cd krishi-sakhi
+=======
+# Krishi Sakhi
+
+A digital farming assistant platform built with FastAPI and Next.js.
+
+## Project Structure
+
+```
+krishi-sakhi/
+│── backend/         # FastAPI backend
+│── web/             # Next.js frontend
+│── docs/            # Documentation
+│── .github/         # GitHub workflows
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Docker and Docker Compose
+- Git
+
+### Quick Start (Docker)
+
+```bash
+# Clone the repository
+git clone https://github.com/Chaitanaya25/krishi-sakhi.git
+cd krishi-sakhi
+
+# Start the services
+docker-compose up
+```
+
+The applications will be available at:
+- Web UI: http://localhost:3000
+- API: http://localhost:8000
+
+## Documentation
+
+See the [docs](./docs) directory for more detailed documentation:
+
+- [Setup Guide](./docs/setup_guide.md)
+- [API Reference](./docs/api_reference.md)
+- [Architecture](./docs/architecture.png)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.powershell
+cd "D:\Krishi Sakhi"
+>>>>>>> 8344a3f (chore(repo): initial push with backend, frontend, and docs)
